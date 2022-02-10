@@ -12,3 +12,6 @@
 | master  | ![](https://img.shields.io/github/checks-status/Szczurowsky/CPresentation/master?style=for-the-badge) | ![CodeFactor Grade](https://img.shields.io/codefactor/grade/github/szczurowsky/cpresentation?style=for-the-badge) |
 
 ## Usage
+
+After first launch app will create 2 files (config.cfg and slides.cfg). Everything you need is just edit this files.
+Enjoy
