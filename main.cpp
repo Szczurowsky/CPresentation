@@ -28,14 +28,14 @@ void run(std::vector<Slide> slides)
                     break;
                 else
                     i--;
-                clear();
+                clear_console();
                 slides.at(i).showSlide();
                 break;
             case 77:
                 if (i == slides.size() - 1)
                     break;
                 i++;
-                clear();
+                clear_console();
                 slides.at(i).showSlide();
                 break;
             default:

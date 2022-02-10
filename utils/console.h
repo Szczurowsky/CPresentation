@@ -2,6 +2,6 @@
 #define CPLUSPOINT_CONSOLE_H
 
 
-void clear();
+void clear_console();
 
 #endif //CPLUSPOINT_CONSOLE_H

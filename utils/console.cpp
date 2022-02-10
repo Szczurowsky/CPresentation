@@ -1,7 +1,7 @@
 #include "console.h"
 #include <cstdlib>
 
-void clear()
+void clear_console()
 {
 #if defined _WIN32
     system("cls");
