@@ -8,9 +8,9 @@
 
 using namespace std;
 
-inline bool exists (const std::string& name) {
-    struct stat buffer{};
-    return (stat (name.c_str(), &buffer) == 0);
+bool exists (const std::string& name) {
+    ifstream f(name.c_str());
+    return f.good();
 }
 
 std::vector<Slide> parse_slides() {

@@ -3,18 +3,19 @@
 #include <iostream>
 #include <fstream>
 #include "map"
-
+#include "config_parser.h"
 using namespace std;
 
-inline bool exists (const std::string& name) {
-    struct stat buffer{};
-    return (stat (name.c_str(), &buffer) == 0);
+bool config_exists (const std::string& name) {
+    ifstream f(name.c_str());
+    return f.good();
 }
+
 
 std::map<string, string> parse() {
     map<string,string> values;
     string config = "line_length=72\n";
-    if (exists("config.cfg")) {
+    if (config_exists("config.cfg")) {
         fstream config_file;
         config_file.open("config.cfg");
         stringstream ss;
