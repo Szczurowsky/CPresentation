@@ -1,11 +1,12 @@
 #include "Slide.h"
 
-#include "iostream"
+#include <iostream>
 #include <utility>
 #include "string"
 #include <vector>
 #include <sstream>
 #include "utils/config_parser.h"
+#include <iterator>
 
 const int FULL_SIZE_LENGTH = std::stoi(parse().at("line_length"));
 
