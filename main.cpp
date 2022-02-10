@@ -1,10 +1,16 @@
+#ifdef _WIN32
 #include <conio.h>
+#endif
+#ifdef linux
+#include <curses.h>
+#endif
 #include "Slide.h"
 #include <vector>
 #include "utils/console.h"
 #include "utils/slides_parser.h"
 
 using namespace std;
+
 
 void run(std::vector<Slide> slides)
 {
@@ -13,6 +19,9 @@ void run(std::vector<Slide> slides)
     slides.at(i).showSlide();
     while(c != 3)
     {
+        #ifdef linux
+        initscr();
+        #endif
         switch((c=getch())) {
             case 75:
                 if (i == 0)
