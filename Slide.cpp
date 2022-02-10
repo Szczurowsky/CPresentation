@@ -5,8 +5,9 @@
 #include "string"
 #include <vector>
 #include <sstream>
+#include "utils/config_parser.h"
 
-const int FULL_SIZE_LENGTH = 72;
+const int FULL_SIZE_LENGTH = std::stoi(parse().at("line_length"));
 
 using namespace std;
 
@@ -49,24 +50,26 @@ void Slide::showSlide() const {
     Slide::split_sentence(content, words);
     string final_content = "# ";
     int line_size = 0;
+    int l = 1;
     for (auto & word : words) {
         line_size += word.length() + 1;
         if (line_size > FULL_SIZE_LENGTH - 4) {
-            for (int s = 0; s < (FULL_SIZE_LENGTH - (line_size - word.length()) - 3); s++)
+            for (int s = 0; s < (FULL_SIZE_LENGTH - (line_size - word.length()) - 2); s++)
                 final_content += " ";
-            final_content += " #\n# ";
-            line_size = 2 + word.length();
+            final_content += "#\n# ";
+            line_size = 1 + word.length();
         }
-        if (word == words.back()) {
+        if (l == words.size()) {
             final_content += word;
-            int left = (FULL_SIZE_LENGTH - 3) - line_size;
+            int left = (FULL_SIZE_LENGTH - 2) - line_size;
             for (int s = 0; s < left; s++)
                 final_content += " ";
-            final_content += " #";
+            final_content += "#";
         }
         else {
             final_content += word + " ";
         }
+        l++;
     }
     cout << final_content << endl;
     // Print spacer

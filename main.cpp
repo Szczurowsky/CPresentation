@@ -1,5 +1,4 @@
 #include <conio.h>
-#include <iostream>
 #include "Slide.h"
 #include <vector>
 #include "utils/console.h"
@@ -40,7 +39,7 @@ int main()
 {
     std::vector<Slide> slides;
     Slide slide = Slide("Test Test test", "loirem ipsum dolore mepisum asdafasdfs");
-    Slide slide1 = Slide("Test2 Test test", "loirem ipsum dolore mepisum asdafasdfs");
+    Slide slide1 = Slide("Test2 Test test", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum finibus nisi eu risuss fermentum dignissim. Praesent a auctor mauris. Duis eleifend libero ac lacus accumsan pulvinar. Suspendisse sapien metus, aliquet sed felis sed, luctus commodo erat. Pellentesque eget blandit risus.");
     slides.push_back(slide);
     slides.push_back(slide1);
     run(slides);

@@ -3,4 +3,4 @@ project(cpluspoint)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(cpluspoint main.cpp utils/console.cpp utils/console.h Slide.cpp Slide.h)
+add_executable(cpluspoint main.cpp utils/console.cpp utils/console.h Slide.cpp Slide.h utils/config_parser.cpp utils/config_parser.h)
